@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Employee Data Management</title>
+    </head>
+
+    <body>
+        <h2>Employee Data Management</h2>
+        <div id="formContainer">
+
+            <label for="nameInput">Name: </label>
+            <input type="text" id="nameInput" placeholder="Enter Name">
+            <br>
+            <label for="emailInput">Email: </label>
+            <input type="email" id="emailInput" placeholder="Enter Email">
+             <br>
+            <label for="numberInput">Number: </label>
+            <input type="text" id="numberInput" placeholder="Enter Mobile Number">
+             <br>
+            <label for="addressInput">Address: </label>
+            <input type="text" id="addressInput" placeholder="Enter Address">
+             <br>
+
+             <button onclick="addData()">Add</button>
+
+        </div>
+
+        <table id="outputTable">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Number</th>
+            <th>Address</th>
+            <th>Action</th>
+        </tr>
+        </table>
+
+        <script>
+
+            function addData()
+            {
+                let name = document.getElementById("nameInput").value;
+                let email = document.getElementById("emailInput").value;
+                let number = document.getElementById("numberInput").value;
+                let address = document.getElementById("addressInput").value;
+
+                if(!name || !email || !number || !address)
+                {
+                    alert("Please fill all the fields");
+                    return;
+                }
+
+                let table = document.getElementById("outputTable");
+                let newRow = table.insertRow(table.rows.length);
+
+                newRow.insertCell(0).innerHTML = name;
+                newRow.insertCell(1).innerHTML = email;
+                newRow.insertCell(2).innerHTML = number;
+                newRow.insertCell(3).innerHTML = address;
+                newRow.insertCell(4).innerHTML = 
+                    '<button onclick="editData(this)"> Edit </button>'+
+                    '<button onclick="deleteData(this)"> Delete </button>';
+
+                clearInputs();
+            }
+
+            function clearInputs()
+            {
+                document.getElementById("nameInput").value="";
+                document.getElementById("emailInput").value="";
+                document.getElementById("numberInput").value="";
+                document.getElementById("addressInput").value="";
+            }
+
+            function deleteData(button)
+            {
+                let row = button.parentNode.parentNode;
+
+                row.parentNode.removeChild(row);
+            }
+
+            function editData(button)
+            {
+                let row = button.parentNode.parentNode;
+
+                let nameCell = row.cells[0];
+                let emailCell = row.cells[1];
+                let numberCell = row.cells[2];
+                let addressCell = row.cells[3];
+
+                let nameInput = prompt("Enter Updated Name: ", nameCell.innerHTML);
+                let emailInput = prompt("Enter Updated Email: ", emailCell.innerHTML);
+                let numberInput = prompt("Enter Updated Mobile Number: ", numberCell.innerHTML);
+                let addressInput = prompt("Enter Updated Address: ", addressCell.innerHTML);
+
+                nameCell.innerHTML = nameInput;
+                emailCell.innerHTML = emailInput;
+                numberCell.innerHTML = numberInput;
+                addressCell.innerHTML = addressInput;
+
+            }
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,48 @@
+input {
+  color: navy;
+  background-color: #e0f7fa;
+  font-style: italic;
+  border: 2px solid blue;
+  padding: 8px;
+}
+
+p {
+  color: darkgreen;
+  background-color: #f1f8e9;
+  font-family: 'Georgia', serif;
+  border-left: 4px solid green;
+  padding: 10px;
+}
+
+select {
+  color: maroon;
+  background-color: #fff3e0;
+  font-weight: bold;
+  border: 2px dashed orange;
+  padding: 6px;
+}
+
+.moderate {
+  color: #333;
+  background-color: #f0f0f0;
+  font-family: 'Verdana', sans-serif;
+  border: 1px solid #999;
+  padding: 10px;
+}
+
+.gaudy {
+  color: white;
+  background-color: purple;
+  font-family: 'Comic Sans MS', cursive;
+  border: 3px dotted yellow;
+  padding: 12px;
+}
+
+/* ID Selector */
+#id1 {
+  color: black;
+  background-color: #c8e6c9;
+  font-size: 18px;
+  border: 2px groove #4caf50;
+  padding: 15px;
+}
