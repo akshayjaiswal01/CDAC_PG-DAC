@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dual Box Animation</title>
+    <style>
+      #box1, #box2 {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+      }
+
+      #box1 {
+        background-color: black;
+        top: 0;
+        left: 0;
+      }
+
+      #box2 {
+        background-color: red;
+        top: 0;
+        right: 0;
+      }
+    </style>
+  </head>
+  <body onload="startAnimations()">
+    <div id="box1"></div>
+    <div id="box2"></div>
+
+    <script>
+      function startAnimations() {
+        animateBox1();
+        animateBox2();
+      }
+
+      function animateBox1() {
+        const box = document.getElementById("box1");
+        let pos = 0;
+        const id = setInterval(frame, 5);
+
+        function frame() {
+          if (pos >= 350) {
+            clearInterval(id);
+          } else {
+            pos++;
+            box.style.top = pos + "px";
+            box.style.left = pos + "px";
+          }
+        }
+      }
+
+      function animateBox2() {
+        const box = document.getElementById("box2");
+        let pos = 0;
+        const id = setInterval(frame, 5);
+
+        function frame() {
+          if (pos >= 350) {
+            clearInterval(id);
+          } else {
+            pos++;
+            box.style.top = pos + "px";
+            box.style.right = pos + "px";
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

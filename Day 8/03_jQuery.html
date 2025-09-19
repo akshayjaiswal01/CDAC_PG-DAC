@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+
+<script>
+    $(document).ready(function(){
+        $("#slideup").click(function(){
+            $("#pannel").slideUp(2000);
+        });
+
+        $("#slidedown").click(function(){
+            $("#pannel").slideDown(2000);
+        });
+
+        $("#slidetoggle").click(function(){
+            $("#pannel").slideToggle(2000);
+        });
+    });
+</script>
+
+<style>
+    #slideup, #pannel, #slidedown, #slidetoggle{
+        padding: 10px;
+        margin: 10px;
+        text-align: center;
+        background-color: beige;
+        border: solid 1px #c3c3c3;
+    }
+    #pannel{
+        padding: 100px;
+    }
+</style>
+<body>
+
+    <div id="slideup"><h2>click to slideUp pannel</h2></div>
+    <div id="slidedown"><h2>click to slidedown pannel</h2></div>
+    <div id="slidetoggle"><h2>click to slidetoggle pannel</h2></div>
+    <div id="pannel"><h2>Hello Jay</h2></div>
+    
+</body>
+</html>

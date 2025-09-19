@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Set Interval
+        </title>
+    </head>
+
+    <body>
+        <h1>Set Interval using Callback</h1>
+        <h2> <p id="demo"></p> </h2>
+
+        <script>
+
+            function myFunction() 
+            {
+                let d = new Date();
+                let hours = d.getHours();
+                let minutes = String(d.getMinutes()).padStart(2, '0');
+                let seconds = String(d.getSeconds()).padStart(2, '0');
+
+                document.getElementById("demo").innerHTML = 
+                hours + ":" + minutes + ":" + seconds;
+            }
+
+            const intervalId = setInterval(myFunction, 1000);
+
+        setTimeout(() => 
+        {
+            clearInterval(intervalId);
+            document.getElementById("demo").innerHTML += " (Stopped)";
+        }, 10000);
+
+
+
+        </script>
+    </body>
+
+
+</html>

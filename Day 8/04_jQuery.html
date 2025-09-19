@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+
+    <script>
+        
+        $(document).ready(function(){
+            $("#calculatebtn").click(function(){
+                let num = parseInt( $("#numberInput").val() );
+                let factorial = 1;
+
+                if(isNaN(num) || num < 0)
+                {
+                    $("#result").text("Please enter valid non negative integer");
+                    return;
+                }
+                for(let i=1; i<=num; i++)
+                {
+                    factorial = factorial * i;
+                }
+
+                $("#result").text("Factorial of "+ num +" is "+ factorial);
+            });
+        });
+    </script>
+
+</head>
+<body>
+    
+    <label>Enter a Number: </label>
+    <input type="text" id="numberInput" placeholder="Enter a number"><br><br>
+    <button id="calculatebtn">Calculate Factorial</button>
+    <p id="result"></p>
+
+</body>
+</html>
