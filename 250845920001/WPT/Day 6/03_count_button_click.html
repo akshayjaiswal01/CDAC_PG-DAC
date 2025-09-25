@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <title>
+        Number of button click
+       </title>  
+    </head>
+    <body>
+        <h2> Counter: <span id="count"> 0 </span>  </h2>
+        <button id="clickbtn" onclick="increment()">click me</button> 
+
+        <script>
+            let count = 0;
+
+            function updateDisplay()
+            {
+                document.getElementById("count").textContent = count;
+            }
+
+            function increment()
+            {
+                count++;
+                if(count>=10)
+            {
+                const btn = document.getElementById("clickbtn");
+                btn.disabled = true;
+            }
+                updateDisplay();
+
+            }
+        </script>
+    </body>
+</html>

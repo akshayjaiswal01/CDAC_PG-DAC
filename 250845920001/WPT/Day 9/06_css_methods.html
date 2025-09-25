@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Class Toggle</title>
+  <script src="jquery-3.7.1.min.js"></script>
+  <style>
+    .highlight {
+      background-color: lightblue;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="add">Add</button>
+  <button id="remove">Remove</button>
+  <button id="toggle">Toggle</button>
+
+  <p id="text">This is a sample paragraph.</p>
+
+  <script>
+    $("#add").click(function() {
+      $("#text").addClass("highlight");
+    });
+
+    $("#remove").click(function() {
+      $("#text").removeClass("highlight");
+    });
+
+    $("#toggle").click(function() {
+      $("#text").toggleClass("highlight");
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Employee Data</title>
+    </head>
+
+    <style>
+        .errormessage{
+            visibility: hidden;
+        }
+    </style>
+
+    <body>
+
+        <script>
+            function validate()
+            {
+                let fName = document.forms["form1"]["fname"].value;
+                let lName = document.forms["form1"]["lname"].value;
+                let email = document.forms["form1"]["email"].value;
+                let dob = document.forms["form1"]["dob"].value;
+
+
+                let valid = true;
+
+                if(fName.trim() == "")
+                {
+                    document.getElementsByClassName("errormessage")[0].style.visibility = 'visible';
+                    valid = false;
+                }
+                else
+                {
+                    document.getElementsByClassName("errormessage")[0].style.visibility = 'hidden';
+                }
+
+                if(lName.trim() == "")
+                {
+                    document.getElementsByClassName("errormessage")[1].style.visibility = 'visible';
+                    valid = false;
+                }
+                else
+                {
+                    document.getElementsByClassName("errormessage")[1].style.visibility = 'hidden';
+                }
+
+                if(email.trim() == "")
+                {
+                    document.getElementsByClassName("errormessage")[2].style.visibility = 'visible';
+                    valid = false;
+                }
+                else
+                {
+                    document.getElementsByClassName("errormessage")[2].style.visibility = 'hidden';
+                }
+
+                if(dob.trim() == "")
+                {
+                    document.getElementsByClassName("errormessage")[3].style.visibility = 'visible';
+                    valid = false;
+                }
+                else
+                {
+                    document.getElementsByClassName("errormessage")[3].style.visibility = 'hidden';
+                }
+
+                if(valid)
+                {
+                    document.forms["form1"].action = "one.html";
+                }
+
+                return valid;
+            }
+        </script>
+
+        <form name="form1" onsubmit="return validate()">
+            <label>First Name</label>
+            <input type="text" id="fname" name="fname" placeholder="First Name">
+            <p class="errormessage"> First Name must be given</p>
+            <br>
+
+            <label>Last Name</label>
+            <input type="text" id="lname" name="lname" placeholder="Last Name">
+            <p class="errormessage">Last Name must be given</p>
+            <br>
+
+            <label>Email ID</label>
+            <input type="email" id="email" name="email" placeholder="email@gmail.com">
+            <p class="errormessage"> Email ID must be given</p>
+            <br>
+
+            <label>Date of Birth</label>
+            <input type="date" id="dob" name="dob" placeholder="dd-mm-yyyy">
+            <P class="errormessage"> Date of Birth must be given </P>
+            <br>
+
+            <input type="submit" id="submit"  value="submit">
+        </form>
+
+    </body>
+</html>

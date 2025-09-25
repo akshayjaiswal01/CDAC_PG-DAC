@@ -1,0 +1,10 @@
+<h1>Calculator</h1>
+<form method="POST" action="/calculate">
+    <input type="number" name="num1" placeholder="First Name">
+    <input type="number" name="num2" placeholder="Second Number">
+    <button type="submit"> Add</button>
+</form>
+
+{{#if result}}
+    <h2>Result: {{result}}</h2>
+{{/if}}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>table </title>
+    <script src="jquery-3.7.1.min.js"></script>
+
+    <script>
+        
+        $(document).ready(function(){
+            $("#tablenum").click(function(){
+                let num = parseInt( $("#numberInput").val() );
+
+                if(isNaN(num) || num < 0)
+                {
+                    $("#result").text("Please enter valid non negative integer");
+                    return;
+                }
+
+                $("#tableoutput tbody").empty();
+
+                for(let i=1; i<=num; i++)
+                {
+                    let table = num * i;
+                    let row = ` <tr> 
+                                    <td> ${num} x ${i} </td>
+                                    <td> ${table} </td>
+                                </tr>`
+                    $("#tableoutput tbody").append(row);
+                }
+
+                
+            });
+        });
+    </script>
+
+</head>
+<body>
+    
+    <label>Enter a Number: </label>
+    <input type="text" id="numberInput" placeholder="Enter a number"><br><br>
+    <button id="tablenum">table till number enterd</button>
+
+    <table id="tableoutput">
+        <thead>
+            <tr>
+                <th>expression</th>
+                <th>result</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <p id="result"></p>
+
+</body>
+</html>

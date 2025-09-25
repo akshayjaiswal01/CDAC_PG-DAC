@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery Hide Show Toggle</title>
+        <script src="jquery-3.7.1.min.js"></script>
+
+        <script>
+
+            $(document).ready( function(){
+
+                // to hiding data
+                $("#hide").click( function(){
+                    $("p").hide(1000);
+                } );
+
+                // to show data
+                $("#show").click( function(){
+                    $("p").show(1000);
+                } );
+
+                // toggle => show hided data and hide showed data
+                $("#toggle").click( function(){
+                    $("p").toggle(1000);
+                } );
+
+            } );
+
+        </script>
+    </head>
+
+    <body>
+        <p>If you click on Hide button i will disappear</p>
+
+        <button id="hide">Hide</button>
+        <button id="show">show</button>
+        <button id="toggle">Toggle</button>
+    </body>
+</html>

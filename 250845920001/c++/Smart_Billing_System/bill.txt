@@ -1,0 +1,11 @@
+Bill ID: 1
+Customer Name: Jay
+Laptop x1 =80000
+Buds x1 =5000
+Phone x1 =50000
+Total = 135000
+Bill ID: 102
+Customer Name: Akshay
+Laptop x1 =80000
+Phone x1 =50000
+Total = 130000

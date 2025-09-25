@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Table</title>
+    </head>
+
+    <body>
+        <h1>Table </h1>
+        <input type="number" id="userNumber" placeholder="Enter Number">
+        <br>
+
+        <button onclick="generateTable()"> Show Table </button>
+
+        <div id="tableContainer"></div>
+
+
+        <script>
+
+            function getInput()
+            {
+                let num = parseInt(document.getElementById("userNumber").value);
+                return isNaN(num) ? null : num;
+            }
+            function generateTable()
+            {
+                const num = getInput();
+                const container = document.getElementById("tableContainer");
+
+                if(num == null)
+                {
+                    container.innerHTML = "<p>Please Enter Valid Number</P>";
+                        return ;
+                }
+
+                let html = "<table> <tr> <th>Expression</th> <th>Result</th> </tr>";
+
+                for(let i=1; i<=10; i++)
+                {
+                    html = html + `<tr> <td>${num} x ${i}</td> <td>${num * i}</td> </tr>`;
+                }                    
+
+                html = html + "</table>";
+
+                container.innerHTML = html;
+            }
+        </script>
+
+    </body>
+</html>
+
+
+
+
+
+
+

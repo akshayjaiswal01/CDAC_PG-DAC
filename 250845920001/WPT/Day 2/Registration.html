@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration Page</title>
+
+        <style>
+
+            body{
+                margin: 20px;
+                padding: 20px;
+                font-family:Arial, Helvetica, sans-serif;
+            }
+
+            form{
+                margin: 0 auto;
+                padding: 20px;
+                width: 300px;
+                border: 1px solid #ccc;
+                border-radius: 10px;
+                background-color:rgba(154, 106, 167, 0.753)
+            }
+
+            label{
+                margin-top: 10px; 
+            }
+
+            #rg{
+                margin-bottom: 10px;
+                padding: 4px;
+                width: 100%;
+                box-sizing: border-box;
+
+            }
+
+            #btn{
+                margin-top: 10px;
+                padding: 5px 10px;
+            }
+
+            h2{
+                margin: 10px;
+                padding-left: 350px;
+                
+                
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+        <h2>Registration Page</h2>
+        <div>
+        <form action=Login.html method="post">
+            <label>First Name: </label><br>
+            <input type="text" id="rg" name="firstname" placeholder="First Name"><br>
+
+            <label>Last Name: </label><br>
+            <input type="text" id="rg" name="lastname" placeholder="Last Name"><br>
+
+            <label>User Name: </label><br>
+            <input type="text" id="rg" name="username" placeholder="User Name"><br>
+
+            <label>Email ID: </label><br>
+            <input type="email" id="rg" name="email" placeholder="email"><br>
+
+            <label>Date of Birth: </label><br>
+            <input type="date" id="rg" name="date" placeholder="date"><br>
+            
+            <label>Known Languages: </label><br>
+            <input type="checkbox" name="language" value="English">English<br>
+            <input type="checkbox" name="language" value="Marathi">Marathi<br>
+            <input type="checkbox" name="language" value="Hindi">Hindi<br>
+
+            <label>Gender: </label><br>
+            <input type="radio" name="gender" value="male">Male<br>
+            <input type="radio" name="gender" value="female">Female<br>
+            <input type="radio" name="gender" value="other">Other<br>
+
+            <label>Password: </label><br>
+            <input type="password" id="rg" name="password" placeholder="password"><br>
+
+            <label>Confirm Password: </label><br>
+            <input type="password" id="rg" name="password" placeholder="confirm password"><br>
+
+            <input type="reset" id="btn" name="reset" value="Reset">
+            <input type="submit" id="btn" name="submit" value="Submit">
+
+        </form>
+        </div>
+    </body>
+</html>
+
