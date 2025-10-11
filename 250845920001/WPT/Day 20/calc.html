@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <form>
+        <label>Enter First Number</label>
+        <input type="number" id="fno" placeholder="Enter no">
+
+        <br> <br>
+
+        <label>Enter Second Number</label>
+        <input type="number" id="sno" placeholder="Enter no">
+
+        <br> <br>
+
+        <button type="button" id="addbtn">Addition</button>
+        <button type="button" id="subtractbtn">Subtraction</button>
+        <button type="button" id="multiplybtn">Multiply</button>
+        <button type="button" id="divisionbtn">Division</button>
+    </form>
+
+    <h3 id="result"> Result: </h3>
+
+
+    <script>
+        
+
+        $(document).ready( function(){
+            $('#addbtn').click( function() {
+
+                let fno = parseFloat($('#fno').val());
+                let sno = parseFloat($('#sno').val());
+
+                if(!isNaN(fno) && !isNaN(sno))
+                {
+                    let add = fno + sno;
+                    $('#result').text("Result: "+add).slow;
+                    
+                }
+                else
+                {
+                    $('#result').text('please enter a valid number');
+                }
+            } )
+        } )
+
+
+
+        $(document).ready(function(){
+
+            $('#subtractbtn').click(function(){
+
+            let fno = parseFloat($('#fno').val());
+            let sno = parseFloat($('#sno').val());
+
+                if(!isNaN(fno) && !isNaN(sno))
+                {
+                    let subtract = fno - sno;
+                    $('#result').text("Result: "+subtract);
+                }
+                else{
+                    $('#result').text("Please enter a valid numbers");
+                }
+                
+            })
+        })
+
+
+        $(document).ready(function(){
+            $('#multiplybtn').click(function(){
+                let fno = parseFloat($('#fno').val());
+                let sno = parseFloat($('#sno').val());
+                if(!isNaN(fno)&& !isNaN(sno))
+            {
+                let multiply = fno * sno;
+                $('#result').text("Result is"+multiply);
+
+            }
+            else {
+                $('#result').text("pleaseenter a valid number");
+            }
+            })
+        })
+
+
+        $(document).ready(function(){
+            $('#divisionbtn').click(function(){
+                let fno = parseFloat($('#fno').val());
+                let sno = parseFloat($('#sno').val());
+
+                if(!isNaN(fno) && !isNaN(sno))
+                {
+                    let division = fno / sno;
+                    $('#result').text("Result: "+division)
+                }
+                else
+                {
+                    $('#result').text("Please enter a valid numbers");
+                }
+            })
+        })
+    </script>
+
+
+</body>
+</html>
