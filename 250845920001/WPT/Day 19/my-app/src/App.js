@@ -1,6 +1,7 @@
 import PasswordGenerator from "./passwordGenerator";
 import ErrorBoundary from "./ErrorBoundry";
 import TestError from "./TestError";
+import Counter from "./Counter";
 
 function App()
 {
@@ -12,6 +13,9 @@ function App()
       <ErrorBoundary>
         <TestError />
       </ErrorBoundary>
+
+
+      <Counter></Counter>
     </>
   )
 }
