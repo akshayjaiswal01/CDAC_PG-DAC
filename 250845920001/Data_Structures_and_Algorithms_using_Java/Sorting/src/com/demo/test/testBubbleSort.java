@@ -26,13 +26,13 @@ public class testBubbleSort
 //		System.out.println("After Sorting using bubble sort algorithm sorted array is: ");
 //		BubbleSortAlgorithm.displayArray(arr);
 		
-//		BubbleSortAlgorithm.bubbleSortImproved(arr);
-//		System.out.println("After Sorting using bubble sort Improved algorithm sorted array is: ");
-//		BubbleSortAlgorithm.displayArray(arr);
-		
-		BubbleSortAlgorithm.bubbleSortImprovedDescending(arr);
-		System.out.println("After Sorting using bubble sort Improved algorithm sorted array in descending order is: ");
+		BubbleSortAlgorithm.bubbleSortImproved(arr);
+		System.out.println("After Sorting using bubble sort Improved algorithm sorted array is: ");
 		BubbleSortAlgorithm.displayArray(arr);
+		
+//		BubbleSortAlgorithm.bubbleSortImprovedDescending(arr);
+//		System.out.println("After Sorting using bubble sort Improved algorithm sorted array in descending order is: ");
+//		BubbleSortAlgorithm.displayArray(arr);
 		
 	}
 }
