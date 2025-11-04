@@ -2,10 +2,10 @@ package com.demo.test;
 
 import java.util.Scanner;
 
-import com.demo.sort.InsertionSortAlgorithm;
+import com.demo.sort.HeapSort;
 import com.demo.sort.SelectionSortAlgorithm;
 
-public class TestSelectionSort {
+public class TestHeapSort {
 
 	public static void main(String[] args) 
 	{
@@ -17,14 +17,14 @@ public class TestSelectionSort {
 		int arr [] = new int[size];
 		
 		System.out.println("Enter the Array: ");
-		SelectionSortAlgorithm.acceptData(arr);
+		HeapSort.acceptData(arr);
 		
 		System.out.println("Your Array is: ");
-		SelectionSortAlgorithm.displayArray(arr);
+		HeapSort.displayArray(arr);
 		
-		SelectionSortAlgorithm.selectionSort(arr);
-		System.out.println("After Sorting using selection sort algorithm sorted array is: ");
-		SelectionSortAlgorithm.displayArray(arr);
+		HeapSort.maxHeapSort(arr);
+		System.out.println("After Sorting using heap sort algorithm sorted array is: ");
+		HeapSort.displayArray(arr);
 
 	}
 
