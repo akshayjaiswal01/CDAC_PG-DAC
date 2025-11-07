@@ -1,6 +1,6 @@
 package com.list.test;
 
-import com.list.singly.SinglyLinkedList;
+import com.linked.list.SinglyLinkedList;
 
 public class TestSinglyLinkedList {
 
@@ -16,7 +16,22 @@ public class TestSinglyLinkedList {
 		list1.addNode(40);
 		list1.displayData();
 		
-		list1.addByPos(5, 50);
+		list1.addByPos(1, 50);
+		list1.displayData();
+		
+		list1.addByPos(3, 15);
+		list1.displayData();
+		
+		list1.addAfterNum(20,25);
+		list1.displayData();
+		
+		list1.deleteByPos(3);
+		list1.displayData();
+		
+		list1.deleteByPos(1);
+		list1.displayData();
+		
+		list1.deleteByPos(5);
 		list1.displayData();
 
 	}
