@@ -4,12 +4,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.xml.crypto.dsig.spec.HMACParameterSpec;
+
 import com.demo.beans.Customer;
 import com.demo.beans.Item;
 
 public class OrderDaoImpl implements OrderDaoI
 {
 	static Map<Customer, List<Item>> hm = new HashMap<>();
+	
+	
 
 	@Override
 	public boolean save(Customer customer, List<Item> ilist) 
@@ -32,48 +36,48 @@ public class OrderDaoImpl implements OrderDaoI
 	@Override
 	public List<Item> displaybyCustomerId(int cid) 
 	{
-		for(Customer c : hm.keySet())
+//		for(Customer c : hm.keySet())
+//		{
+//			if(c.getCid() == cid)
+//			{
+//				return hm.get(c);
+//			}
+//		}
+//		return null;
+		
+		Customer c = new Customer(cid);
+		if(hm.containsKey(c))
 		{
-			if(c.getCid() == cid)
-			{
-				return hm.get(c);
-			}
+			return hm.get(c);
 		}
+		
+		
 		return null;
 	}
 
 	@Override
 	public boolean deleteCustomerById(int cid) 
 	{
-		for(Customer c : hm.keySet())
+//		for(Customer c : hm.keySet())
+//		{
+//			if(c.getCid() == cid)
+//			{
+//				hm.remove(c);
+//				return true;
+//			}
+//		}
+//		return false;
+		
+		Customer c = new Customer(cid);
+		if(hm.containsKey(c))
 		{
-			if(c.getCid() == cid)
-			{
-				hm.remove(c);
-				return true;
-			}
+			hm.remove(c);
+			return true;
 		}
 		return false;
 	}
 
-	@Override
-	public boolean addNewItemInExixtingOrder(int cid, int iid, String iname, int iqty, double iprice) 
-	{
-		for(Customer c : hm.keySet())
-		{
-			if(c.getCid() == cid)
-			{
-				List<Item> itemlist = hm.get(c);
-				
-				Item newItem = new Item(iid, iname, iqty, iprice);
-				
-				itemlist.add(newItem);
-				
-				return true;
-			}
-		}
-		return false;
-	}
+	
 
 	@Override
 	public boolean deleteItemInExistingOrder(int cid, int iid) 
@@ -99,5 +103,21 @@ public class OrderDaoImpl implements OrderDaoI
 		}
 		return false;
 	}
+
+	@Override
+	public boolean addNewItemInExixtingOrder(int cid, Item item) 
+	{
+		Customer c = new Customer(cid);
+		
+		if(hm.containsKey(c))
+		{
+			List<Item> listItems = hm.get(c);
+			listItems.add(item);
+			return true;
+		}
+		return false;
+	}
+
+	
 
 }
