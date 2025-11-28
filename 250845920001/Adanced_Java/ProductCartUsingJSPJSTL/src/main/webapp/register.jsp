@@ -1,0 +1,28 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<h1>Registeration From</h1>
+
+	<form action="registeruser" method="post">
+	
+		Enter Username : <input type="text" name="username" id="username"></br>
+		Enter Password : <input type="text" name="password" id="pasword"></br>
+		Enter Email : <input type="text" name="email" id="email"></br>
+		Enter Phone no : <input type="text" name="phoneno" id="phoneno"></br>
+		Enter Address : <input type="text" name="address" id="address"></br>
+		
+		<button type="submit" name="register" id="register">Register</button>
+	
+	</form>
+	
+	<a href="login.jsp">Login</a>
+	
+</body>
+</html>
