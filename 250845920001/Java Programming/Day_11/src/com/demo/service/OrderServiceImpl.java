@@ -97,19 +97,19 @@ public class OrderServiceImpl implements OrderServiceI
 	}
 
 
-	@Override
-	public boolean addNewItemInExixtingOrder(int cid, int iid, String iname, int iqty, double iprice) 
-	{
-		
-		return odao.addNewItemInExixtingOrder( cid,  iid,  iname,  iqty,  iprice);
-	}
-
 
 	@Override
 	public boolean deleteItemInExistingOrder(int cid, int iid) 
 	{
 		
 		return odao.deleteItemInExistingOrder(cid, iid);
+	}
+
+
+	@Override
+	public boolean addNewItemInExixtingOrder(int cid, Item item) {
+		
+		return odao.addNewItemInExixtingOrder(cid, item);
 	}
 
 }

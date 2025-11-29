@@ -101,7 +101,9 @@ public class TestOrderManagementSystem {
 					System.out.println("Enter Item Price: ");
 					double iprice = sc.nextDouble();
 					
-					boolean status = oservice.addNewItemInExixtingOrder(cid, iid, iname, iqty, iprice);
+					Item item = new Item(iid, iname, iqty, iprice);
+					
+					boolean status = oservice.addNewItemInExixtingOrder(cid, item);
 					if(status)
 					{
 						System.out.println("Item added successfully");
@@ -126,7 +128,7 @@ public class TestOrderManagementSystem {
 					}
 					else
 					{
-						System.out.println("Nopt found");
+						System.out.println("Not found");
 					}
 				}
 				case 7->

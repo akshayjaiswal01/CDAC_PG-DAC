@@ -17,8 +17,10 @@ public interface OrderServiceI
 
 	boolean deleteCustomerById(int cid);
 
-	boolean addNewItemInExixtingOrder(int cid, int iid, String iname, int iqty, double iprice);
-
 	boolean deleteItemInExistingOrder(int cid, int iid);
+
+	boolean addNewItemInExixtingOrder(int cid, Item item);
+
+	
 
 }
